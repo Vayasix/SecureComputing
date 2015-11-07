@@ -1,2 +1,2 @@
 # SecureComputing
-Things related to Secure computing, including Fully Homomorphic Encryption (FHE)
+Things related to Secure computing, cryptography, Fully Homomorphic Encryption (FHE)
