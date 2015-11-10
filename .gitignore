@@ -1,5 +1,5 @@
 #ignore list
-*.aux
-*.dvi
-*.log
+/Basic_knowledge/*.aux
+/Basic_knowledge/*.dvi
+/Basic_knowledge/*.log
 

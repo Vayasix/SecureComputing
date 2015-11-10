@@ -1,0 +1,58 @@
+\documentclass[11pt, oneside]{article}  %use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}       % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}        % ... or a4paper or a5paper or ... 
+%\geometry{landscape}         % Activate for rotated page geometry
+%\usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx} % Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+%\graphicspath{{}}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{ascmac}
+\usepackage{ulem}
+
+
+\title{Cryptography}
+\author{Vayasix}
+\date{2015 11.7} 
+
+\begin{document}\maketitle\newpage
+
+%Body starts from here..
+\part{Stream Ciphers}
+\section{Information theoretic security and one time pad}
+\subsection{Symmetric Ciphers}
+
+
+Def: a cipher defined over \{${\mathcal{K, M, C}}$\} is a pair of 'efficient'
+(usually efficient means running in polynomial time) algs \(\mathit{E, D}\) where
+\[
+  \mathit{E} : \mathcal{K} \times \mathcal{M} \to \mathcal{C},~ ~   
+  \mathit{D} : \mathcal{K} \times \mathcal{C} \to \mathcal{M}
+\]
+\[
+  s.t. \forall m \in \mathcal{M}, k \in \mathcal{K} : \mathcal{D}(k, \mathcal{E}(k, m)) = m
+\]
+NOTE: $\mathit{E}$ is randomized, $~$ $\mathit{D}$ is deterministic.
+\newline
+
+\subsection{One Time Pad}
+feature: very fast enc/dec, but long keys as long as plaintext\\
+$enc: m \oplus k = c, ~ dec: c \oplus k = m$
+
+\subsection{Information Theoretic Security (Shannon 1949)}
+Shannon's definition, basic idea is \\
+CT should reveal no 'information' about PT\\
+\newline
+Def: A cipher $(\mathit{E, D})$ over $(\mathcal{K, M, C})$ is perfectly secure if
+\[
+  \forall m_0, m_1 \in \mathcal{M},~ c \in \mathcal{C}
+\]\[
+  Pr[\mathit{E}(k, m_0) = c] = Pr[\mathit{E}(k, m_1) = c] 
+\]
+where k is uniform in $\mathcal{K}$ ($k \xleftarrow{R} K$)
+
+
+
+\end{document}
+
